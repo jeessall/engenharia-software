@@ -1,3 +1,36 @@
+print("Seja bem vindo ao App de vendas Jéssica Pedroso")
+valor_do_pedido = float(input("Digite o valor do pedido: "))
+quantidade_de_parcelas = float(input("Digite a quantidade de parcelas: "))
+#condições if elif e else para validar a quantidade de parcelas
+#para poder calcular o valor do juros sobre as parcelas
+if quantidade_de_parcelas >= 4 and quantidade_de_parcelas <= 6:
+#se o o valor da parcela for maior ou igual a 4 e menor ou igual a 6 vai calcular o juros de 4%
+#e assim vai ser feito nas demais parcelas conforme a quantidade de parcelas que o cliente escolher
+  juros = 0.04
+  valor_da_parcela = valor_do_pedido * (1 + juros) / quantidade_de_parcelas
+  valor_total_parcelado = valor_da_parcela * quantidade_de_parcelas
+  print(f"Valor da parcela: {valor_da_parcela:.2f}")
+  print(f"Valor total parcelado: {valor_total_parcelado:.2f}")
+elif quantidade_de_parcelas >= 6 and quantidade_de_parcelas <= 9:
+  juros = 0.08
+elif quantidade_de_parcelas >= 9 and quantidade_de_parcelas <= 13:
+  juros = 0.16
+elif quantidade_de_parcelas >= 13:
+  juros = 0.32
+  valor_da_parcela = valor_do_pedido * (1 + juros) / quantidade_de_parcelas
+  valor_total_parcelado = valor_da_parcela * quantidade_de_parcelas
+  print(f"Valor da parcela: {valor_da_parcela:.2f}")
+  print(f"Valor total parcelado: {valor_total_parcelado:.2f}")
+elif quantidade_de_parcelas < 4:
+#se for menor que 4 o juros deve ser 0%
+  juros = 0.00
+else:
+#se não atender uma quantidade de parcelas validas vai retornar uma mensagem de erro
+  print("Quantidade de parcelas inválida")
+
+
+
+
 #Implementar o print com uma mensagem de boas-vindas e o menu.
 print("Bem-vindo(a) ao sistema de pedidos da Marmitaria da Jéssica Pedroso!")
 print("-" * 50) #Linha divisória para melhor visualização
